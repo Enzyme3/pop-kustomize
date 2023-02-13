@@ -203,18 +203,21 @@ gcloud deploy apply \
  gcloud container hub memberships register $GKE_TEST \
  --gke-uri=https://container.googleapis.com/v1/projects/${PROJECT_GKE}/locations/$REGION/clusters/$GKE_TEST \
  --enable-workload-identity \
+ --install-connect-agent \
  --project $PROJECT_CICD
 
 # register stage cluster to fleet
  gcloud container hub memberships register $GKE_STAGE \
  --gke-uri=https://container.googleapis.com/v1/projects/${PROJECT_GKE}/locations/$REGION/clusters/$GKE_STAGE \
  --enable-workload-identity \
+ --install-connect-agent \
  --project $PROJECT_CICD
 
 # register prod cluster to fleet
  gcloud container hub memberships register $GKE_PROD \
  --gke-uri=https://container.googleapis.com/v1/projects/${PROJECT_GKE}/locations/$REGION/clusters/$GKE_PROD \
  --enable-workload-identity \
+ --install-connect-agent \
  --project $PROJECT_CICD
 
 # get context for test cluster

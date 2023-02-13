@@ -151,7 +151,8 @@ resource "null_resource" "register_gke_hub_test" {
       gcloud container hub memberships register ${var.gke_test_name} \
         --project ${var.project_cicd} \
         --gke-uri=https://container.googleapis.com/v1/projects/${var.project_gke}/locations/${var.region}/clusters/${var.gke_test_name} \
-        --enable-workload-identity 
+        --enable-workload-identity
+        --install-connect-agent
     EOT
   }
 }
@@ -163,7 +164,8 @@ resource "null_resource" "register_gke_hub_stage" {
       gcloud container hub memberships register ${var.gke_stage_name} \
         --project ${var.project_cicd} \
         --gke-uri=https://container.googleapis.com/v1/projects/${var.project_gke}/locations/${var.region}/clusters/${var.gke_stage_name} \
-        --enable-workload-identity 
+        --enable-workload-identity
+        --install-connect-agent
     EOT
   }
 }
@@ -175,7 +177,8 @@ resource "null_resource" "register_gke_hub_prod" {
       gcloud container hub memberships register ${var.gke_prod_name} \
         --project ${var.project_cicd} \
         --gke-uri=https://container.googleapis.com/v1/projects/${var.project_gke}/locations/${var.region}/clusters/${var.gke_prod_name} \
-        --enable-workload-identity 
+        --enable-workload-identity
+        --install-connect-agent
     EOT
   }
 }
